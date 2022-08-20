@@ -1,0 +1,24 @@
+a=[11,34,2,5,1,7,4]
+b=[]
+z=0
+for i in range(0,len(a)-2):
+    if(z==2):
+        break
+    else:
+        z=0
+    b=[a[i]]
+    for j in range(i+1,len(a)):
+        if(a[j]>b[0]):
+            b.append(a[j])
+            z=1
+            break
+    if(z==0):
+        continue
+    index=a.index(b[0])
+    for j in range(index+1,len(a)):
+        if(a[j]>b[1]):
+            b.append(a[j])
+            z=2
+            break
+print(b)
+    
