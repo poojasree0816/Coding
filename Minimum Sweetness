@@ -1,0 +1,8 @@
+N,k=list(map(int,input().split(" ")))
+sweetness=list(map(int,input().split(" ")))
+minvalue=max(sweetness)
+for i in range(N):
+    maxval=max(sweetness[i:i+k+1])
+    if(maxval<minvalue):
+        minvalue=maxval
+print(minvalue)
