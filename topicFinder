@@ -1,0 +1,12 @@
+def topicFinder (cls, input1, input2):
+    smax = sum(input2)
+    l=0
+    r=input1-1
+    for i in range(input1):
+        for j in range(i,input1):
+            s = sum(input2[i:j+1])
+            if(smax<s):
+                l=i
+                r=j
+                smax = s
+    print(l,r)
