@@ -1,0 +1,36 @@
+def mergesort(lists,l,r):
+    if(l>=r):
+        return
+    mid=(l+r)//2
+    mergesort(lists,l,mid)
+    mergesort(lists,mid+1,r)
+    merge(lists,l,r,mid)
+    
+def merge(lists,l,r,mid):
+        ll=lists[l:mid+1]
+        rl=lists[mid+1:r+1]
+        i,j=0,0
+        k=l
+        print("i j ",i,j,len(ll),len(rl))
+        while(i<len(ll) and j<len(rl)):
+            #print("in",ll,rl,ll[i],rl[j])
+            if(ll[i]<rl[j]):
+                lists[k]=ll[i]
+                i=i+1
+            else:
+                lists[k]=rl[j]
+                j=j+1
+            k=k+1
+        while(j<len(rl)):
+            #print("in1",ll,rl,rl[i])
+            lists[k]=rl[j]
+            j=j+1
+            k=k+1
+        while(i<len(ll)):
+            lists[k]=ll[i]
+            i=i+1
+            k=k+1
+        print(lists,ll,rl)
+a=[55,33,22,11,44]
+mergesort(a,0,4)
+print(a)
