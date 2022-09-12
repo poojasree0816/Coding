@@ -1,0 +1,9 @@
+def funcDistance(inputDist,start,end):
+    ans=[]
+    for x in inputDist:
+        if(x<=end and x>=start):
+            ans.append(x)
+    if(len(ans)==0):
+        return -1
+    else:
+        return ans
